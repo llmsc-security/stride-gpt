@@ -74,13 +74,13 @@ USER appuser
 # ------------------------------------------------------------
 #  Runtime configuration
 # ------------------------------------------------------------
-EXPOSE 8501
+EXPOSE 11040
 
 # ------------------------------------------------------------
 #  Healthcheck – curl the internal Streamlit health endpoint
 # ------------------------------------------------------------
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
-    CMD curl --fail http://localhost:8501/_stcore/health || exit 1
+    CMD curl --fail http://localhost:11040/_stcore/health || exit 1
 
 # ------------------------------------------------------------
 #  Entrypoint – start the Streamlit app
